@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'HemisphereSite.views.home', name='home'),
+    url(r'^$', 'HemisphereSite.views.home', name='home'),
     # url(r'^HemisphereSite/', include('HemisphereSite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

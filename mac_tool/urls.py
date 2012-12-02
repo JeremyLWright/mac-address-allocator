@@ -6,5 +6,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-        url(r'^$', 'mac_tool.views.index'),
+        url(r'^$', 'mac_tool.views.reserve'),
+        url(r'^reserve', 'mac_tool.views.reserve'),
         )
