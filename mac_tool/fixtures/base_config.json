@@ -1,0 +1,10 @@
+[
+    { "pk" : "1", "model": "mac_tool.FactoryLocation", "fields": {"name" : "Scottsdale" }},
+    { "pk" : "2", "model": "mac_tool.FactoryLocation", "fields": {"name" : "Honor Tone" }},
+    { "pk" : "3", "model": "mac_tool.FactoryLocation", "fields": { "name" : "Brisbane" }},
+    { "pk" : "4", "model": "mac_tool.FactoryLocation", "fields": { "name" : "Kansas" }},
+    { "pk" : "1", "model": "mac_tool.OUI", "fields": {"name" : 8229889}},
+    { "pk" : "1", "model": "mac_tool.Product", "fields": { "name" : "S700" }},
+    { "pk" : "2", "model": "mac_tool.Product", "fields": { "name" : "OMAX" }}
+    { "pk" : "1", "model": "mac_tool.RequestUser", "fields": { "first_name" : "Jeremy", "last_name" : "Wright", "access_code" : 6533 }}
+]

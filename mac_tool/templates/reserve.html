@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block SideBarContent %}
+<ul id="Sponsorship" class="nav nav-list">
+    <li class="nav-header">16,777,216 Addresses Remaining</li>
+</ul>
+{% endblock SideBarContent %}
+
+{% block MainNav %}
+<form action="/mac/reserve" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Reserve" class="btn btn-primary">
+</form>
+{% endblock MainNav %}
+
+{% block MainContent %}
+{% endblock MainContent %}
+
