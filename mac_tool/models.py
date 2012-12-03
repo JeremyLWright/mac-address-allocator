@@ -22,6 +22,7 @@ class Product(models.Model):
 
 class OUI(models.Model):
     name = models.IntegerField()
+    exhausted = models.BooleanField()
     def __unicode__(self):
         return hex(self.name)
     
@@ -31,7 +32,14 @@ class MacAddress(models.Model):
     class Meta:
         unique_together = (("base_address", "production_address"))
     def __unicode__(self):
-        return hex(self.base_address.name) + hex(self.production_address)
+        oui_str = hex(self.base_address.name).lstrip("0x")
+        pro_str = "{0:06X}".format(self.production_address)
+        oui_parts = [oui_str[i:i+2] for i in range(0, len(oui_str), 2)]
+        pro_parts = [pro_str[i:i+2] for i in range(0, len(pro_str), 2)]
+        mac_parts = oui_parts + pro_parts
+        formatted_mac = "{0}-{1}-{2}-{3}-{4}-{5}".format(*mac_parts)
+        print formatted_mac
+        return formatted_mac
 
 class MacRequest(models.Model):
     req_date = models.DateTimeField(auto_now_add=True)
@@ -43,3 +51,6 @@ class MacRequest(models.Model):
     die_id = models.CharField(max_length=200)
     extra_notes = models.TextField()
     mac_address = models.ForeignKey(MacAddress)
+    
+    def __unicode__(self):
+        return "{0}, SN:{1} Die:{2}".format(self.product, self.serial_number, self.die_id)

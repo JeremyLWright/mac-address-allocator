@@ -8,4 +8,5 @@ admin.autodiscover()
 urlpatterns = patterns('',
         url(r'^$', 'mac_tool.views.reserve'),
         url(r'^reserve', 'mac_tool.views.reserve'),
+        url(r'^show', 'mac_tool.views.show'),
         )
